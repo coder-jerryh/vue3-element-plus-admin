@@ -1,0 +1,325 @@
+// 变量
+$bg: #f2f2f2;
+$border: 1px solid #f2f2f2;
+$primary:#409EFF;
+$success:#67C23A;
+$warning:#E6A23C;
+$danger:#F56C6C;
+$info:#909399;
+
+// 修改ElementUI默认样式
+// button为danger和success是
+.el-button--text.btn-del,
+.el-button--text.btn-del:hover,
+.el-button--text.btn-del:active,
+.el-button--text.btn-del:link,
+.el-button--text.btn-del:visited,
+.el-button--text.btn-del:focus {
+  color: #F56C6C;
+}
+.el-button--text.btn-send,
+.el-button--text.btn-send:hover,
+.el-button--text.btn-send:active,
+.el-button--text.btn-send:link,
+.el-button--text.btn-send:visited,
+.el-button--text.btn-send:focus {
+  color: #67c23a;
+}
+.el-button--primary.is-plain:hover,.el-button--primary.is-plain:focus{
+  color: $primary!important;
+  background: #ecf5ff!important;
+  opacity: .75;
+}
+.el-button--warning.is-plain:hover,.el-button--warning.is-plain:focus{
+  color: $warning!important;
+  background: #ecf5ff!important;
+  opacity: .75;
+}
+.el-button--success.is-plain:hover,.el-button--success.is-plain:focus{
+  color: $success!important;
+  background: #ecf5ff!important;
+  opacity: .75;
+}
+.el-button--danger.is-plain:hover,.el-button--danger.is-plain:focus{
+  color: $danger!important;
+  background: #ecf5ff!important;
+  opacity: .75;
+}
+.is-plain:active{
+  opacity: 1;
+}
+// 按钮和下拉菜单
+.el-button--text,.el-dropdown-menu__item {
+  &.el-dropdown-menu__item {
+    padding: 8px 20px !important;
+    font-size: 14px !important;
+  }
+  &.primary{
+    color: #409EFF;
+  }
+  &.success{
+    color: #67C23A;
+  }
+  &.warning{
+    color: #E6A23C;
+  }
+  &.danger{
+    color: #F56C6C;
+  }
+  &[disabled]{
+    color: #C0C4CC;
+  }
+}
+// 各种输入框的叉叉
+.el-icon-circle-close{
+  color: #F56C6C!important;
+  font-size: 18px!important;
+  position: relative;
+  top: 1px;
+}
+.el-tooltip {
+  cursor: pointer;
+}
+.el-range-separator{
+  position: relative;
+}
+.el-radio-group{
+  position: relative;
+  top: 10px;
+}
+// 时间选择器按钮位置
+.el-time-panel__footer{
+  display: flex;
+  justify-content: flex-end;
+}
+// 时间选择器鼠标样式
+.el-date-editor, .el-date-editor input{
+  cursor: pointer;
+}
+// 增大el-table多选框点击区域
+.el-table-column--selection .el-checkbox{
+  position: static;
+  &::after{
+    display: inline-block;
+    content: '';
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+  &.is-disabled::after{
+    display: none;
+  }
+}
+// el-table默认配置
+// .el-table .cell{
+//   // 添加文本溢出
+//   min-width: 120px;
+//   white-space: nowrap;
+//   text-align: center;
+// }
+.toolbar+.el-table, #absoluteTable{
+  width: auto;
+  position: absolute;
+  right: 12px;
+  left: 12px;
+  max-height: calc(100% - 88px);
+}
+// 弹窗下的表格
+.el-dialog__wrapper .el-table{
+  position: relative;
+  right: 0;
+  left: 0;
+  &.el-table--border {
+    border-left: 0;
+  }
+  .el-table__body-wrapper{
+    border: 1px solid #ebeef5;
+    border-top: 0;
+  }
+}
+// 下拉框样式
+.el-select-dropdown{
+  .el-scrollbar{
+    display: block!important;
+  }
+  .el-select-dropdown__item{
+    height: 38px;
+    line-height: 38px;
+  }
+  .el-select-dropdown__list{
+    padding: 0!important;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+}
+// 下拉框最大高度
+.el-select-dropdown__wrap{
+  max-height: 388px!important;
+}
+.el-select{
+  width: 100%;
+}
+// el-table表头
+thead td, th {
+  background-color:#f2f2f2!important;
+}
+// el-tooltip最大宽度
+.el-tooltip__popper{
+  max-width: 400px;
+}
+// 菜单
+.el-menu-item,.el-submenu,.el-menu-item{
+  border-bottom: 0!important;
+  color: #666;
+  transition: all ease .3s;
+  position: relative;
+  &::after{
+    opacity: 0;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.06);
+    transition: all ease .3s;
+  }
+  &:focus, &:hover, &.is-active{
+    background-color: inherit!important;
+    color: #666;
+  }
+  &:focus::after, &:hover::after, &.is-active::after{
+    opacity: 1;
+  }
+}
+// nav-menu下拉菜单样式
+.el-menu--popup{
+  border-radius: 4px!important;
+  overflow: hidden;
+  padding: 0!important;
+  min-width: 168px!important;
+  li.el-menu-item{
+    height: 46px;
+    line-height: 46px;
+    padding: 0 16px;
+  }
+}
+// 复制-图标
+.el-icon-copy-document{
+  display: inline-block;
+  transform: rotate(90deg);
+}
+// el-tab
+.el-tabs__item{
+  box-shadow: none!important;
+}
+.el-form-item__content{
+  display: flex;
+  // 保证表单label位置一致
+  .el-form-item__label::before{
+    content: '*';
+    color: #F56C6C;
+    margin-right: 4px;
+    opacity: 0;
+  }
+}
+.is-required .el-form-item__label::before{
+  opacity: 1;
+}
+// 确认款和警告框
+.el-message-box__message{
+  overflow: auto;
+  max-height: 180px;
+}
+.el-message-box__close{
+  font-size: 22px;
+}
+// switch未选中时的颜色
+.el-switch__label.el-switch__label--right{
+  color: #999;
+}
+// 图片预览
+.el-image-viewer__btn .el-icon-circle-close{
+  font-size: 40px!important;
+  position: static!important;
+}
+// 消息提示
+.is-message-box{
+  flex-direction: row;
+}
+
+
+
+
+// 类
+.hover {
+  transition: all ease .3s;
+  &:hover {
+    background: rgb(246, 246, 246);
+  }
+}
+*[flex-center]{
+  display: flex;
+  align-items: center;
+}
+// 多行文本溢出省略号
+@mixin line($lineNum) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $lineNum;
+  -webkit-box-orient: vertical;
+}
+// 单行文本溢出省略号
+.one-line{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.scroller{
+  // 滚动条样式
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: rgba(196, 201, 203, 0.4);
+  }
+  ::-webkit-scrollbar-thumb:hover , ::-webkit-scrollbar-thumb:active{
+    background-color: rgba(196, 201, 203, 0.5);
+  }
+}
+// toolbar默认样式
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  .marginAuto{
+    margin-left: auto!important;
+  }
+  &>*:last-child{
+    margin-right: 0!important;
+  }
+}
+
+
+
+// ---------- 过渡 ----------
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
+}
+.fade-enter-active {
+  transition: opacity .3s;
+}
